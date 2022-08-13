@@ -1,5 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	<div></div>
+	<div {{ stimulus_controller('hello') }}>
+		<input type="text" {{ stimulus_target('hello', 'name') }}>
+
+		<button {{ stimulus_action('hello', 'greet') }}>
+			Greet
+		</button>
+
+		<div {{ stimulus_target('hello', 'output') }}></div>
+	</div>
 {% endblock %}
